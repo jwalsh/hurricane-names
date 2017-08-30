@@ -23,9 +23,9 @@ let shuffled = Object
 // console.log(shuffled);
 
 let hurricanes = [];
-
+let iterations = 0;
 while (Object.keys(shuffled).length > 0) {
-  // console.log(Object.keys(shuffled));
+  // console.log(iterations++, Object.keys(shuffled));
   let letters = Object.keys(shuffled).sort();
   letters.map(e => {
     hurricanes.push(shuffled[e].pop());
@@ -37,3 +37,9 @@ while (Object.keys(shuffled).length > 0) {
 }
 
 console.log(hurricanes.join('\n'));
+
+if (names.length !== hurricanes.length) {
+  console.log('WARNING: Input mismatch',
+              names.length,
+              hurricanes.length);
+}
